@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Pagination = ({ pokemonPerPage, totalPokemon, paginate }) => {
+function Pagination({ pokemonPerPage, totalPokemon, paginate }) {
     const pageNumbers = []
 
     for (let i = 1; i <= Math.ceil(totalPokemon / pokemonPerPage); i++) {
         pageNumbers.push(i)
     }
+
     return (
         <div className="container">
             <div className="row pt-4 m-auto px-auto">
@@ -14,7 +15,7 @@ const Pagination = ({ pokemonPerPage, totalPokemon, paginate }) => {
                     <ul className='pagination m-0 p-0 d-flex flex-row justify-content-center align-items-center flex-wrap'>
                         {pageNumbers.map(number =>
                             <li key={number} className='page-item'>
-                                <a onClick={() => paginate(number)} href='/' className='page-link'>
+                                <a onClick={() => paginate(number)} href={number} className='page-link'>
                                     {number}
                                 </a>
                             </li>
@@ -26,4 +27,4 @@ const Pagination = ({ pokemonPerPage, totalPokemon, paginate }) => {
     )
 }
 
-export default Pagination
+export default Pagination;

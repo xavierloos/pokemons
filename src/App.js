@@ -15,10 +15,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Menu />}>
             <Route path='/' element={<PokemonAPI />} />
-            {/* <Route path='!#' element={<PokemonAPI />} /> */}
+            <Route path='/*' element={<PokemonAPI />} />
             <Route path='about' element={<About />} />
             <Route path='pokeball' element={<Pokeball />} />
-            <Route path='*' element={<Navigate replace to='/' />} />
+            {/* <Route path='*' element={<Navigate replace to='/' />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

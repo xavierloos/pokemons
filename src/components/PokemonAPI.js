@@ -65,7 +65,7 @@ import PokemonList from './PokemonList'
 
 // import React from 'react'
 
-const PokemonAPI = () => {
+function PokemonAPI() {
 
   const [pokemon, setPokemon] = useState([])
   const [loading, setLoading] = useState(false)
@@ -98,7 +98,6 @@ const PokemonAPI = () => {
     //     }
     //   </div>
     // </div>
-
     <>
       <Pagination pokemonPerPage={pokemonPerPage} totalPokemon={pokemon.length} paginate={paginate} />
       <PokemonList pokemon={currentPokemon} loading={loading} />
@@ -107,4 +106,4 @@ const PokemonAPI = () => {
   )
 }
 
-export default PokemonAPI
+export default PokemonAPI;

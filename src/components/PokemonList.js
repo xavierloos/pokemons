@@ -2,7 +2,7 @@ import React from 'react'
 import PokemonCard from './PokemonCard'
 // import Pagination from './Pagination'
 
-const PokemonList = ({ pokemon, loading }) => {
+function PokemonList({ pokemon, loading }) {
 
     if (loading) {
         return <h2>Loading... </h2>
@@ -19,4 +19,4 @@ const PokemonList = ({ pokemon, loading }) => {
         </div>
     )
 }
-export default PokemonList
+export default PokemonList;

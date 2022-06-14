@@ -4,6 +4,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import PokemonInfo from './PokemonInfo'
 import PokemonStrength from './PokemonStrength';
+
 const pokeball = JSON.parse(localStorage.getItem('Pokeball')) ? JSON.parse(localStorage.getItem('Pokeball')) : []
 
 function PokemonCard(props) {
