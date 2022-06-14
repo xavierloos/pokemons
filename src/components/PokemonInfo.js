@@ -75,7 +75,6 @@ function PokemonInfo(props) {
               X Close
             </Button>
           </div>
-
         </div>
       </Modal>
     </div>

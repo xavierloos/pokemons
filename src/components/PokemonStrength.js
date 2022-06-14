@@ -21,11 +21,9 @@ function PokemonStrength(props) {
 
     return (
         <div className='d-flex flex-row'>
-            {
-                strength.map((type) =>
-                    <div key={props.id + type} className={'strengthIcon ' + type}>{type}</div>
-                )
-            }
+            {strength.map((type) =>
+                <div key={props.id + type} className={'strengthIcon ' + type}>{type}</div>
+            )}
         </div>
     );
 }
