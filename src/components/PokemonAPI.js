@@ -66,8 +66,10 @@ import PokemonList from './PokemonList'
 // import React from 'react'
 
 function PokemonAPI() {
+  // Check if the data has been cached!
+  const local_data = JSON.parse(localStorage.getItem('Pokemons')) ? JSON.parse(localStorage.getItem('Pokemons')) : []
 
-  const [pokemon, setPokemon] = useState([])
+  const [pokemon, setPokemon] = useState(local_data)
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [pokemonPerPage] = useState(100)
@@ -75,8 +77,22 @@ function PokemonAPI() {
   useEffect(() => {
     const fetchPokemon = async () => {
       setLoading(true);
-      const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?&limit=2000`);
-      setPokemon(res.data['results']);
+      if (local_data.length == 0) {
+        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?&limit=2000`);
+        // Save data
+        const clean_data = []
+        res.data['results'].forEach((element, index) => {
+          clean_data.push(
+            {
+              id: index + 1,
+              name: element['name'],
+              url: element['url'],
+              image: `https://cdn.traction.one/pokedex/pokemon/${index + 1}.png`
+            })
+        });
+        localStorage.setItem("Pokemons", JSON.stringify(clean_data));
+        window.location.reload(true)
+      }
       setLoading(false)
     }
     fetchPokemon();
