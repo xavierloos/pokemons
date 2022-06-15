@@ -8,6 +8,7 @@ import PokemonStrength from './PokemonStrength';
 const pokeball = JSON.parse(localStorage.getItem('Pokeball')) ? JSON.parse(localStorage.getItem('Pokeball')) : []
 
 function PokemonCard(props) {
+
     const addToPokeball = (pokemon) => {
         pokeball.push(pokemon);
         localStorage.setItem("Pokeball", JSON.stringify(pokeball));
@@ -40,11 +41,11 @@ function PokemonCard(props) {
     const pokemonId = props.id <= 9 ? '00' + props.id : props.id <= 99 ? '0' + props.id : props.id;
 
     return (
-        <div id={props.id} key={props.id} className="flip-card m-2 col-12 col-md-4 col-lg-3">
+        <div id={props.id} key={props.id} className="flip-card m-2 col-12 col-sm-5 col-md-3 col-lg-3">
             <div className="flip-card-inner">
                 <div className="flip-card-front d-flex flex-column justify-content-between">
                     <div className='m-2'>
-                        <LazyLoadImage className='pokemon-img' id={props.id + '-image'} alt={props.id + '-' + props.name + '-image'} src={props.image} placeholderSrc={process.env.PUBLIC_URL + 'images/pokeball-spinner'} />
+                        <LazyLoadImage className='pokemon-img' id={props.id + '-image'} alt={props.id + '-' + props.name + '-image'} src={`https://cdn.traction.one/pokedex/pokemon/${props.id}.png`} placeholderSrc={process.env.PUBLIC_URL + 'images/pokeball-spinner'} />
                         <img alt={props.id + '-status-image'} src='./images/icons8-pokeball-96.png' className={checkStatus(props.name)} />
                         <h3 className='pokemon-id ml-1'>#{pokemonId}</h3>
                     </div>

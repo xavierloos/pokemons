@@ -24,7 +24,6 @@ function PokemonInfo(props) {
         })
         info.push(abilities)
         setInfo(info)
-        // setStrength(types)
       })
       .catch((e) => {
         console.log(e)
@@ -39,13 +38,6 @@ function PokemonInfo(props) {
       })
       return names
     }
-
-    // if (info[3]) {
-    //   info[3] = JSON.stringify(info[3])
-    //   info[3].foreach((pokemon) =>
-    //     console.log(pokemon)
-    //   )
-    // }
   }
   return (
     <div key={info[0] + info[1]}>
