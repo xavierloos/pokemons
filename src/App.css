@@ -66,6 +66,8 @@
 .pokemon-img {
   width: 100%;
   max-width: 200px;
+  height: 200px;
+  max-height: 200px;
   margin-top: 1rem;
   filter: drop-shadow(0.3rem 0em 0.3rem rgba(0, 0, 0, 0.6))
 }

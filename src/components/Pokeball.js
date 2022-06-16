@@ -3,7 +3,7 @@ import PokemonCard from './PokemonCard'
 
 const pokeball = JSON.parse(localStorage.getItem('Pokeball')) ? JSON.parse(localStorage.getItem('Pokeball')) : []
 
-pokeball.sort((a, b) => { return a.id - b.id });
+pokeball.sort((a, b) => { return a - b })
 
 const check = pokeball.length === 0 ? 'No pokemons in pokeball' : '';
 
@@ -19,8 +19,9 @@ function Pokeball() {
       <div className="container">
          <div className="row d-flex flex-row justify-content-center py-4">
             <h1>{checkPokeball()}</h1>
-            {pokeball.map((pokemon, index) =>
-               <PokemonCard id={pokemon.id} key={index + 1} name={pokemon.name} image={pokemon.image} status='true' />
+            {pokeball.map((pokemon) =>
+               // console.log(pokemon)
+               < PokemonCard id={parseInt(pokemon)} key={parseInt(pokemon)} />
             )}
          </div>
       </div>
