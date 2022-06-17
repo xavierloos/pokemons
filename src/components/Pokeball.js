@@ -16,12 +16,11 @@ function Pokeball() {
    }
 
    return (
-      <div className="container">
+      <div className="container-fluid">
          <div className="row d-flex flex-row justify-content-center py-4">
             <h1>{checkPokeball()}</h1>
             {pokeball.map((pokemon) =>
-               // console.log(pokemon)
-               < PokemonCard id={parseInt(pokemon)} key={parseInt(pokemon)} />
+               <PokemonCard id={parseInt(pokemon)} key={parseInt(pokemon)} />
             )}
          </div>
       </div>
